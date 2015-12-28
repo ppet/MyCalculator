@@ -78,6 +78,8 @@ class ViewController: UIViewController {
         }
     }
     
+    // "private" very important to avoid a conflict while linking in Objective-C
+    // http://stackoverflow.com/questions/29457720/compiler-error-method-with-objective-c-selector-conflicts-with-previous-declara
     private func performOperation(operation: Double -> Double) {
         if operandStack.count >= 1 {
             displayValue = operation(operandStack.removeLast())
